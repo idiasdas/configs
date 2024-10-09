@@ -97,4 +97,7 @@ At this point, you should be able to run `nvim` from anywhere.
 
 ## Setup nvim config
 
-Clone the nvim-config in `$HOME/.config/nvim` or do a symbolic link to wherever you decided to clone it.
+```bash
+cd ~/.config/nvim
+ln -s ~/configs/nvim/ nvim
+```
