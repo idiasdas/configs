@@ -56,3 +56,15 @@ vim.keymap.set("i", "<C-h>", "<C-Left>")
 vim.keymap.set("i", "<C-l>", "<C-Right>")
 vim.keymap.set("i", "<C-j>", "<Down>")
 vim.keymap.set("i", "<C-k>", "<Up>")
+
+-- Add enclosing thingies in insert mode
+
+vim.keymap.set("i", "<A-9>", "()<Left>")
+vim.keymap.set("i", "<A-0>", "()")
+
+vim.keymap.set("i", "<A-[>", "[]<Left>")
+vim.keymap.set("i", "<A-]>", "[]")
+
+vim.keymap.set("i", "<A-{>", "{}<Left>")
+vim.keymap.set("i", "<A-}>", "{}")
+
