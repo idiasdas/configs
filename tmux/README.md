@@ -16,6 +16,14 @@ ln -s <path-to-tmux-config/.tmux.conf> .
 
 Moreover, you must use `<leader>I` within a tmux session to install the plugins.
 
+# Set up
+
+Add
+
+```bash
+export PATH="$HOME/configs/tmux/scripts:$PATH"
+```
+
 # Verification
 
 Check the `.tmux/plugins` dir to verify that the plugins are properly installed.

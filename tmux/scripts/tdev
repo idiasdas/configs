@@ -1,0 +1,11 @@
+#!/bin/sh
+
+if [ -z "$1" ]; then
+    tmux new -d nvim .
+else
+    tmux new -d -s $1 nvim .
+fi
+
+tmux new-window -n 'terminal'
+tmux select-window -t 0
+tmux -2 attach-session -d
