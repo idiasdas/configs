@@ -3,6 +3,8 @@
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { noremap = true })
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { noremap = true })
 vim.api.nvim_set_keymap("t", "<ESC>", [[<C-\><C-n>]], { noremap = true })
+vim.keymap.set("n", "n", "nzzzv")
+vim.keymap.set("n", "N", "Nzzzv")
 
 -- window navigation
 
@@ -58,3 +60,18 @@ vim.keymap.set("i", "<A-}>", "{}")
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
+-- Stay on current position when merging lines
+
+vim.keymap.set("n", "J", "mzJ`z")
+
+-- Paste without overriding buffer
+
+vim.keymap.set("n", "<leader>p", "\"_dP")
+
+-- Yank to + register
+
+vim.keymap.set("n", "<leader>y", "\"+y")
+vim.keymap.set("v", "<leader>y", "\"+y")
+vim.keymap.set("n", "<leader>Y", "\"+Y")
+
