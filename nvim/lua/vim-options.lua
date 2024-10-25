@@ -11,4 +11,4 @@ vim.cmd("set scrolloff=8")
 
 vim.cmd("let $NVIM_TUI_ENABLE_TRUE_COLOR=1")
 vim.cmd("set termguicolors")
-
+vim.cmd("set ignorecase smartcase")
