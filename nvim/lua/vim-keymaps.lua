@@ -66,7 +66,7 @@ vim.keymap.set("n", "J", "mzJ`z")
 
 -- Paste without overriding buffer
 
-vim.keymap.set("n", "<leader>p", "\"_dP")
+vim.keymap.set("n", "<leader>p", '"_dP')
 
 -- Yank to + register
 
@@ -74,3 +74,6 @@ vim.keymap.set("n", "<leader>y", "\"+y")
 vim.keymap.set("v", "<leader>y", "\"+y")
 vim.keymap.set("n", "<leader>Y", "\"+Y")
 
+-- Clangd Switch Source Header
+
+vim.keymap.set("n", "<leader>th", ":ClangdSwithSourceHeader<CR>", { desc = "Clangd: [T]oggle [H]eader Source" })
