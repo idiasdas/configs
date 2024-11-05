@@ -44,23 +44,11 @@ sudo install lazygit /usr/local/bin
 
 Check [here](https://luarocks.org/) and [here](https://www.lua.org/download.html).
 
-Install lua5.1:
+Install 'lua5.1' and 'luarocks':
 
 ```bash
-curl -L -R -O  https://www.lua.org/ftp/lua-5.1.5.tar.gz
-tar zxf lua-5.1.5.tar.gz
-cd lua-5.1.5
-make all test
-```
-
-Install luarocks:
-
-```bash
-wget https://luarocks.org/releases/luarocks-3.11.1.tar.gz
-tar zxpf luarocks-3.11.1.tar.gz
-cd luarocks-3.11.1
-./configure && make && sudo make install
-sudo luarocks install luasocket
+sudo apt install lua5.1
+sudo apt install luarocks
 ```
 
 Test by running `lua`, you should get:
