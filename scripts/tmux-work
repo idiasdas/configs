@@ -1,0 +1,40 @@
+#!/bin/bash
+
+if [[ -z $1 ]]; then
+    dev_dir="$HOME/dev"
+    config_dir="$HOME/configs"
+
+    all_dirs="$(fdfind  -d 1 -t d --search-path $dev_dir  --search-path $config_dir)"
+
+    if [[ -z $all_dirs ]];then
+        echo "No dir found."
+        exit 1
+    fi
+
+    selected_dir=$(echo $all_dirs | sed "s/ /\n/g" | fzf )
+    if [[ -z $selected_dir ]];then
+        echo "No dir selected."
+        exit 1
+    fi
+    target_name=$(basename $selected_dir)
+else
+    selected_dir=$PWD
+    target_name=$1
+fi
+
+tmux has-session -t $target_name 2> /dev/null
+
+if [[ $? -eq 1 ]]; then
+	tmux new -d -s $target_name -c $selected_dir
+	tmux neww -a -t $target_name:1 -c $selected_dir
+
+	tmux send-keys -t $target_name:1.0 "nvim . "
+	tmux send-keys -t $target_name:2.0 "ls -la "
+	tmux select-window -t $target_name:1
+fi
+
+if [[ $TMUX ]]; then
+	tmux switch-client -t $target_name
+else
+	tmux a -t $target_name
+fi

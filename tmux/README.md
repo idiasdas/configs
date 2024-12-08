@@ -21,7 +21,7 @@ Moreover, you must use `<leader>I` within a tmux session to install the plugins.
 Add
 
 ```bash
-export PATH="$HOME/configs/tmux/scripts:$PATH"
+export PATH="$HOME/configs/scripts:$PATH"
 ```
 
 # Verification
