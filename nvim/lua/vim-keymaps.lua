@@ -12,6 +12,8 @@ vim.keymap.set("n", "<C-h>", ":wincmd h<CR>", { desc = "Window: Go Right" })
 vim.keymap.set("n", "<C-k>", ":wincmd k<CR>", { desc = "Window: Go Up" })
 vim.keymap.set("n", "<C-l>", ":wincmd l<CR>", { desc = "Window: Go Left" })
 
+vim.keymap.set("n", "<leader>wh", "<C-w>H", { desc = "Window: Split Vertical" })
+
 -- indentation
 
 vim.keymap.set("n", "<TAB>", ">>")
