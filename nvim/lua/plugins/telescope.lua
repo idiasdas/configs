@@ -53,9 +53,6 @@ return {
                 builtin.find_files({ cwd = "$HOME/Documents/notes" })
             end, { desc = "Telescope: [S]earch [N]otes" })
             vim.keymap.set("n", "<C-f>", builtin.grep_string, { desc = "Telescope: Grep word" })
-            vim.keymap.set("n", "<leader>tp", function()
-                builtin.planets({ show_pluto = true })
-            end, { desc = "Telescope: [T]oggle [P]lanets" })
         end,
     },
 }

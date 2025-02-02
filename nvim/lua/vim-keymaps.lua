@@ -12,14 +12,14 @@ vim.keymap.set("n", "<C-h>", ":wincmd h<CR>", { desc = "Window: Go Right" })
 vim.keymap.set("n", "<C-k>", ":wincmd k<CR>", { desc = "Window: Go Up" })
 vim.keymap.set("n", "<C-l>", ":wincmd l<CR>", { desc = "Window: Go Left" })
 
+-- window control
+
 vim.keymap.set("n", "<leader>wh", "<C-w>H", { desc = "Window: Split Vertical" })
 
--- indentation
+-- quickfix
 
-vim.keymap.set("n", "<TAB>", ">>")
-vim.keymap.set("n", "<S-TAB>", "<<")
-vim.keymap.set("v", "<TAB>", "<S->>gv")
-vim.keymap.set("v", "<S-TAB>", "<S-<>gv")
+vim.keymap.set("n", "<M-j>", ":cnext<CR>zz", { desc = "Quickfix: Next" })
+vim.keymap.set("n", "<M-k>", ":cprev<CR>zz", { desc = "Quickfix: Previous" })
 
 -- vim diagnostics
 
