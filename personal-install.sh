@@ -22,7 +22,7 @@ log(){
 }
 
 execute(){
-    log "execute $@"
+    log "[EXECUTE]: $@"
     if [[ $dry == "1" ]]; then
         return
     fi
@@ -37,7 +37,7 @@ scripts=$(find ./install-scripts -maxdepth 1 -mindepth 1 -executable -type f)
 
 for script in $scripts; do
     if echo "$script" | grep -qv "$filter"; then
-        log "Filtering $script"
+        log "Filtering -- $script"
         continue
     fi
 

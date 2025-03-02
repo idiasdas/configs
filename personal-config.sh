@@ -22,14 +22,14 @@ log(){
 }
 
 execute(){
-    log "execute $@"
+    log "[EXECUTE]: $@"
     if [[ $dry == "1" ]]; then
         return
     fi
     "$@"
 }
 
-log "Setting up config files"
+log "Remove previous configurations"
 
 execute rm $HOME/.bashrc
 execute rm $HOME/.profile
@@ -37,9 +37,12 @@ execute rm $HOME/.git_prompt
 execute rm $HOME/.tmux.conf
 execute rm -r $HOME/.config/nvim
 
+log "Create symbolic links to config"
+
 execute ln -s -T $PWD/bashrc/bashrc $HOME/.bashrc
 execute ln -s -T $PWD/bashrc/profile $HOME/.profile
 execute ln -s -T $PWD/bashrc/git_prompt $HOME/.git_prompt
 execute ln -s -T $PWD/tmux/tmux.conf $HOME/.tmux.conf
 execute ln -s -T $PWD/nvim $HOME/.config/nvim
 
+log "Done"
