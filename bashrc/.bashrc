@@ -71,3 +71,10 @@ alias l='ls -CF'
 
 set -o vi
 alias wk='tmux-work'
+alias vim='nvim'
+alias gs='git status'
+alias ga='git add'
+alias gd='git diff'
+alias gdc='git diff --cached'
+alias gp='git pull'
+alias gl='git log --oneline'
