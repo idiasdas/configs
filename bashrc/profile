@@ -43,5 +43,6 @@ unset __conda_setup
 
 # Personal
 
-export PATH="$HOME/neovim/bin:$PATH"
+EDITOR=vi
+export PATH="$HOME/personal/neovim/bin:$PATH"
 export PATH="$HOME/configs/scripts:$PATH"
