@@ -70,6 +70,7 @@ alias la='ls -A'
 alias l='ls -CF'
 
 set -o vi
+alias c='clear'
 alias wk='tmux-work'
 alias vim='nvim'
 alias gs='git status'
