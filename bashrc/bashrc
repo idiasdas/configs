@@ -51,7 +51,8 @@ parse_conda_env () {
 }
 
 set_prompt_all() {
-    PS1="\[$ORANGE\]$(parse_conda_env)\[$GREEN\]$(__git_ps1 "( %s)")\[$BLUE\][\w]\[$RESET_COLOR\]\$ "
+    # PS1="\[$ORANGE\]$(parse_conda_env)\[$BLUE\][\w]\[$GREEN\]$(__git_ps1 "( %s)")\[$RESET_COLOR\]\$ "
+    PS1="$(parse_conda_env)\[$BLUE\][\w]\[$GREEN\]$(__git_ps1 "( %s)")\[$RESET_COLOR\]\$ "
 }
 
 PROMPT_COMMAND=set_prompt_all
@@ -71,6 +72,7 @@ alias l='ls -CF'
 
 set -o vi
 alias c='clear'
+alias e='exit'
 alias wk='tmux-work'
 alias vim='nvim'
 alias gs='git status'
