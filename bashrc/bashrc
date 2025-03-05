@@ -66,21 +66,6 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-
 set -o vi
-alias c='clear'
-alias e='exit'
-alias t='tmux a'
-alias vim='nvim'
-alias gs='git status'
-alias ga='git add'
-alias gd='git diff'
-alias gdc='git diff --cached'
-alias gp='git pull'
-alias gl='git log --oneline'
-
-bind '"\ef":"tmux-find-session"'
+source ~/.bash_alias
 
