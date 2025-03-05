@@ -5,6 +5,10 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz", { noremap = true })
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
+-- project navigation
+
+vim.keymap.set("n", "<M-f>", "<cmd>silent !tmux neww tmux-find-session<CR>", { desc = "Select directory and open tmux session" })
+
 -- window navigation
 
 vim.keymap.set("n", "<C-j>", ":wincmd j<CR>", { desc = "Window: Go Down" })

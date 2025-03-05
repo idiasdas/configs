@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+if [[ -x ./.tmux-default-session ]]; then
+    ./.tmux-default-session
+elif [[ -x $HOME/configs/scripts/tmux-default-session ]]; then
+    $HOME/configs/scripts/tmux-default-session
+fi

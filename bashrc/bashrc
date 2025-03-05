@@ -73,7 +73,7 @@ alias l='ls -CF'
 set -o vi
 alias c='clear'
 alias e='exit'
-alias wk='tmux-work'
+alias t='tmux a'
 alias vim='nvim'
 alias gs='git status'
 alias ga='git add'
@@ -81,3 +81,6 @@ alias gd='git diff'
 alias gdc='git diff --cached'
 alias gp='git pull'
 alias gl='git log --oneline'
+
+bind '"\ef":"tmux-find-session"'
+
