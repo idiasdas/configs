@@ -2,9 +2,9 @@
 
 if [[ -z $1 ]]; then
     dev_dir="$HOME/dev"
-    config_dir="$HOME/configs"
 
-    all_dirs="$(fdfind  -d 1 -t d --search-path $dev_dir  --search-path $config_dir)"
+    all_dirs="$(fdfind  -d 1 -t d --search-path $dev_dir)"
+    all_dirs="$(fdfind  -d 1 -t d --search-path $HOME "configs|bin") "$all_dirs
 
     if [[ -z $all_dirs ]];then
         echo "No dir found."
