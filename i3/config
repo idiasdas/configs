@@ -201,3 +201,9 @@ exec_always --no-startup-id $HOME/.config/i3/setup-wallpaper.sh
 
 bindsym Print exec gnome-screenshot -i
 bindsym $mod+Print exec gnome-screenshot -acf /tmp/test && cat /tmp/test | xclip -i -selection clipboard -target image/png
+
+# Set up rofi
+
+bindsym $mod+o exec rofi -show run
+bindsym $mod+g exec rofi -show combi
+
