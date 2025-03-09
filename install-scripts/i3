@@ -8,6 +8,7 @@ sudo apt install xscreensaver
 sudo apt install feh
 sudo apt install gnome-screenshot
 sudo apt install imagemagick
+sudo apt install blueman
 
 git clone https://github.com/Raymo111/i3lock-color.git ~/i3lock-color
 pushd ~/i3lock-color
