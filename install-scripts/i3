@@ -1,9 +1,21 @@
 #!/usr/bin/env bash
 
-sudo apt install i3
-sudo apt install polybar
+# Dependencies
+sudo apt install autoconf gcc make pkg-config libpam0g-dev libcairo2-dev libfontconfig1-dev libxcb-composite0-dev libev-dev libx11-xcb-dev libxcb-xkb-dev libxcb-xinerama0-dev libxcb-randr0-dev libxcb-image0-dev libxcb-util-dev libxcb-xrm-dev libxkbcommon-dev libxkbcommon-x11-dev libjpeg-dev
+sudo apt install xclip
+sudo apt install wmctrl
+sudo apt install xscreensaver
 sudo apt install feh
 sudo apt install gnome-screenshot
-sudo apt install xclip
+sudo apt install imagemagick
+
+git clone https://github.com/Raymo111/i3lock-color.git ~/i3lock-color
+pushd ~/i3lock-color
+./install-i3lock-color.sh
+popd
+
+# I3 Stuff
+
+sudo apt install i3
+sudo apt install polybar
 sudo apt install rofi
-sudo apt install wmctrl
