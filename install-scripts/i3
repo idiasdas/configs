@@ -3,3 +3,6 @@
 sudo apt install i3
 sudo apt install polybar
 sudo apt install feh
+sudo apt install gnome-screenshot
+sudo apt install xclip
+
