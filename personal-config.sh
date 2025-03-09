@@ -38,6 +38,7 @@ execute rm $HOME/.bash_alias
 execute rm $HOME/.tmux.conf
 execute rm -r $HOME/.config/nvim
 execute rm -r $HOME/.config/i3
+execute rm -r $HOME/.config/polybar
 
 log "Create symbolic links to config"
 
@@ -48,5 +49,6 @@ execute ln -s -T $PWD/bashrc/bash_alias $HOME/.bash_alias
 execute ln -s -T $PWD/tmux/tmux.conf $HOME/.tmux.conf
 execute ln -s -T $PWD/nvim $HOME/.config/nvim
 execute ln -s -T $PWD/i3 $HOME/.config/i3
+execute ln -s -T $PWD/polybar $HOME/.config/polybar
 
 log "Done"
