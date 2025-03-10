@@ -225,6 +225,5 @@ hide_edge_borders smart
 bindsym Control+$mod+h move workspace to output left
 bindsym Control+$mod+l move workspace to output right
 
-# Compose keys
-
-exec --no-startup-id setxkbmap -option compose:rightalt
+# Setup Keyboard
+exec --no-startup-id setxkbmap us -option '' -option compose:ralt -option caps:escape
