@@ -7,11 +7,11 @@ polybar-msg cmd quit
 # killall -q polybar
 #
 
-
+bar=mybar
 if type "xrandr"; then
   for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
-    MONITOR=$m polybar mybar 2>&1 | tee -a /tmp/polybar.log & disown
+    MONITOR=$m polybar $bar 2>&1 | tee -a /tmp/polybar.log & disown
   done
 else
-   polybar mybar 2>&1 | tee -a /tmp/polybar.log & disown
+   polybar $bar 2>&1 | tee -a /tmp/polybar.log & disown
 fi

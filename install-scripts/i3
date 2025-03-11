@@ -1,14 +1,16 @@
 #!/usr/bin/env bash
 
 # Dependencies
-sudo apt install autoconf gcc make pkg-config libpam0g-dev libcairo2-dev libfontconfig1-dev libxcb-composite0-dev libev-dev libx11-xcb-dev libxcb-xkb-dev libxcb-xinerama0-dev libxcb-randr0-dev libxcb-image0-dev libxcb-util10-dev libxcb-xrm-dev libxkbcommon-dev libxkbcommon-x11-dev libjpeg-dev
-sudo apt install xclip
-sudo apt install wmctrl
-sudo apt install xscreensaver
-sudo apt install feh
-sudo apt install gnome-screenshot
-sudo apt install imagemagick
-sudo apt install blueman
+sudo apt -y install autoconf gcc make pkg-config libpam0g-dev libcairo2-dev libfontconfig1-dev libxcb-composite0-dev libev-dev libx11-xcb-dev libxcb-xkb-dev libxcb-xinerama0-dev libxcb-randr0-dev libxcb-image0-dev libxcb-util10-dev libxcb-xrm-dev libxkbcommon-dev libxkbcommon-x11-dev libjpeg-dev
+sudo apt -y install xclip
+sudo apt -y install wmctrl
+sudo apt -y install xscreensaver
+sudo apt -y install feh
+sudo apt -y install gnome-screenshot
+sudo apt -y install imagemagick
+sudo apt -y install blueman
+sudo apt -y install network-manager pulseaudio pulsemixer bluez playerctl
+sudo apt -y install pavucontrol
 
 git clone https://github.com/Raymo111/i3lock-color.git ~/i3lock-color --branch 2.13.c.5
 pushd ~/i3lock-color
@@ -17,6 +19,6 @@ popd
 
 # I3 Stuff
 
-sudo apt install i3
-sudo apt install polybar
-sudo apt install rofi
+sudo apt -y install i3
+sudo apt -y install polybar
+sudo apt -y install rofi
