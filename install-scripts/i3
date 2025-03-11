@@ -12,10 +12,15 @@ sudo apt -y install blueman
 sudo apt -y install network-manager pulseaudio pulsemixer bluez playerctl
 sudo apt -y install pavucontrol
 
-git clone https://github.com/Raymo111/i3lock-color.git ~/i3lock-color --branch 2.13.c.5
-pushd ~/i3lock-color
-./install-i3lock-color.sh
-popd
+i3lock_color_dir=~/i3lock-color
+if [[ -d i3lock_color_dir ]];then
+    echo "--Not cloning i3lock-color again"
+else
+    git clone https://github.com/Raymo111/i3lock-color.git $i3lock_color_dir --branch 2.13.c.5
+    pushd $i3lock_color_dir
+    ./install-i3lock-color.sh
+    popd
+fi
 
 # I3 Stuff
 
