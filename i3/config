@@ -164,10 +164,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym h resize shrink width 10 px or 10 ppt
         bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+        bindsym j resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -224,14 +224,18 @@ hide_edge_borders smart
 bindsym Control+$mod+h move workspace to output left
 bindsym Control+$mod+l move workspace to output right
 
-# Setup Keyboard
-
-exec_always --no-startup-id setxkbmap us -option '' -option compose:ralt -option caps:escape
 
 # Disable auto suspend
 
 exec --no-startup-id systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
 
-# Reset monitor config
+mode "config" {
+    bindsym m exec xrandr --auto
+    bindsym k exec bash -c "setxkbmap us -option '' -option compose:ralt -option caps:escape"
 
-bindsym $mod+y exec xrandr --auto
+    bindsym Escape mode "default"
+    bindsym Return mode "default"
+    bindsym $mod+y mode "default"
+}
+
+bindsym $mod+y mode "config"
