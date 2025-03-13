@@ -68,4 +68,5 @@ fi
 
 set -o vi
 source ~/.bash_alias
+source /usr/share/doc/fzf/examples/key-bindings.bash
 
