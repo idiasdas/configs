@@ -2,7 +2,8 @@ return {
     {
         "nvim-telescope/telescope.nvim",
         tag = "0.1.8",
-        dependencies = { "nvim-lua/plenary.nvim",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
             "nvim-telescope/telescope-ui-select.nvim",
             { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
         },
@@ -34,7 +35,9 @@ return {
             vim.keymap.set("n", "<leader>si", function()
                 builtin.find_files({ hidden = true, no_ignore = true })
             end, { desc = "Telescope: Find files (include .gitignore)" })
-            vim.keymap.set("n", "<leader>sg", builtin.live_grep, { desc = "Telescope: [S]earch [G]rep" })
+            vim.keymap.set("n", "<leader>sg", function()
+                builtin.live_grep({ use_regex = true })
+            end, { desc = "Telescope: [S]earch [G]rep" })
             vim.keymap.set("n", "<leader>sh", builtin.help_tags, { desc = "Telescope: [S]earch [H]elp" })
             vim.keymap.set("n", "<leader>sk", builtin.keymaps, { desc = "Telescope: [S]earch [K]eymaps" })
             vim.keymap.set("n", "<leader>sd", builtin.diagnostics, { desc = "Telescope: [S]earch [D]iagnostics" })
