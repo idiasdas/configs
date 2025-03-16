@@ -226,16 +226,23 @@ bindsym Control+$mod+l move workspace to output right
 
 
 # Disable auto suspend
-
 exec --no-startup-id systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
 
-mode "config" {
-    bindsym m exec xrandr --auto
-    bindsym k exec bash -c "setxkbmap us -option '' -option compose:ralt -option caps:escape"
+# Setup keyboard binding on start up
+exec --no-startup-id bash -c "setxkbmap us -option '' -option compose:ralt -option caps:escape"
 
+mode "config" {
+    # Reset monitor config
+    bindsym m exec xrandr --auto
+    # Reset keyboard bindings
+    bindsym k exec bash -c "setxkbmap us -option '' -option compose:ralt -option caps:escape"
+    # Get out of config mode
     bindsym Escape mode "default"
     bindsym Return mode "default"
     bindsym $mod+y mode "default"
 }
 
 bindsym $mod+y mode "config"
+
+# Open empty container
+bindsym $mod+u open
