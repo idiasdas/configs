@@ -43,6 +43,10 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	end,
 })
 
+-- clear highlight 
+
+vim.keymap.set("n", "<leader>ch", ":noh<CR>", { desc = "Clear Highlight" })
+
 -- Move selected text
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
