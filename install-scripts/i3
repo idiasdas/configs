@@ -4,23 +4,24 @@
 sudo apt -y install autoconf gcc make pkg-config libpam0g-dev libcairo2-dev libfontconfig1-dev libxcb-composite0-dev libev-dev libx11-xcb-dev libxcb-xkb-dev libxcb-xinerama0-dev libxcb-randr0-dev libxcb-image0-dev libxcb-util10-dev libxcb-xrm-dev libxkbcommon-dev libxkbcommon-x11-dev libjpeg-dev
 sudo apt -y install xclip
 sudo apt -y install wmctrl
-sudo apt -y install xscreensaver
+sudo apt -y install autorandr
 sudo apt -y install feh
+sudo apt -y install gnome-screensaver
 sudo apt -y install gnome-screenshot
 sudo apt -y install imagemagick
 sudo apt -y install blueman
 sudo apt -y install network-manager pulseaudio pulsemixer bluez playerctl
 sudo apt -y install pavucontrol
 
-i3lock_color_dir=~/i3lock-color
-if [[ -d i3lock_color_dir ]];then
-    echo "--Not cloning i3lock-color again"
-else
-    git clone https://github.com/Raymo111/i3lock-color.git $i3lock_color_dir --branch 2.13.c.5
-    pushd $i3lock_color_dir
-    ./install-i3lock-color.sh
-    popd
-fi
+# i3lock_color_dir=~/i3lock-color
+# if [[ -d i3lock_color_dir ]];then
+#     echo "--Not cloning i3lock-color again"
+# else
+#     git clone https://github.com/Raymo111/i3lock-color.git $i3lock_color_dir --branch 2.13.c.5
+#     pushd $i3lock_color_dir
+#     ./install-i3lock-color.sh
+#     popd
+# fi
 
 # I3 Stuff
 
