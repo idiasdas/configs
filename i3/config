@@ -238,7 +238,7 @@ exec --no-startup-id bash -c "setxkbmap us -option '' -option compose:ralt -opti
 
 mode "config" {
     # Reset monitor config
-    bindsym m exec xrandr --auto
+    bindsym m exec "$HOME/configs/i3/setup-screen.sh"
     # Reset keyboard bindings
     bindsym k exec bash -c "setxkbmap us -option '' -option compose:ralt -option caps:escape"
     # Get out of config mode
@@ -251,3 +251,8 @@ bindsym $mod+y mode "config"
 
 # Open empty container
 bindsym $mod+u open
+
+# Setup autorandr
+
+exec --no-startup-id "systemctl --user enable autorandr.service"
+exec --no-startup-id "systemctl --user start autorandr.service"
