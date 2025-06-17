@@ -29,7 +29,12 @@ vim.keymap.set("n", "<M-k>", ":cprev<CR>zz", { desc = "Quickfix: Previous" })
 
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Diagnostics: Go previous" })
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Diagnostics: Go next" })
-vim.keymap.set("n", "<leader>td", function()
+vim.keymap.set('n', '<leader>td', function()
+    local new_config = not vim.diagnostic.config().virtual_lines
+    vim.diagnostic.config({ virtual_lines = new_config })
+    vim.cmd('normal! zz')
+end, { desc = 'Toggle diagnostic virtual_lines' })
+vim.keymap.set("n", "<leader>tD", function()
 	vim.diagnostic.enable(not vim.diagnostic.is_enabled())
 end, { desc = "Diagnostics: [T]oggle [D]iagnostics" })
 
