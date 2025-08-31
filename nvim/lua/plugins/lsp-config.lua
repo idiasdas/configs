@@ -20,7 +20,7 @@ return {
             local lspconfig = require("lspconfig")
             local telescope = require("telescope.builtin")
 
-            local on_attach = function(_, bufnr)
+            local on_attach = function(client, bufnr)
                 local map = function(keys, func, desc, mode)
                     mode = mode or "n"
                     vim.keymap.set(mode, keys, func, { buffer = bufnr, desc = "LSP: " .. desc })
@@ -38,6 +38,15 @@ return {
                 map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction", { "n", "x" })
                 map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
                 map("<leader>gf", vim.lsp.buf.format, "[F]ormat file")
+
+                if client.supports_method("textDocument/formatting") then
+                    vim.api.nvim_create_autocmd("BufWritePre", {
+                        buffer = bufnr,
+                        callback = function()
+                            vim.lsp.buf.format({ bufnr = bufnr })
+                        end,
+                    })
+                end
             end
 
             lspconfig.lua_ls.setup({

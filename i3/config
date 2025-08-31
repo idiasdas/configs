@@ -52,6 +52,9 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal 
 
+# start nautilus
+bindsym $mod+n exec  nautilus --no-desktop --new-window
+
 # kill focused window
 bindsym $mod+Shift+w kill
 
@@ -139,16 +142,28 @@ bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace number $ws1 workspace number $ws1
-bindsym $mod+Shift+2 move container to workspace number $ws2 workspace number $ws2
-bindsym $mod+Shift+3 move container to workspace number $ws3 workspace number $ws3
-bindsym $mod+Shift+4 move container to workspace number $ws4 workspace number $ws4
-bindsym $mod+Shift+5 move container to workspace number $ws5 workspace number $ws5
-bindsym $mod+Shift+6 move container to workspace number $ws6 workspace number $ws6
-bindsym $mod+Shift+7 move container to workspace number $ws7 workspace number $ws7
-bindsym $mod+Shift+8 move container to workspace number $ws8 workspace number $ws8
-bindsym $mod+Shift+9 move container to workspace number $ws9 workspace number $ws9
-bindsym $mod+Shift+0 move container to workspace number $ws10 workspace number $ws10
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10
+
+# move focused container to workspace and go
+bindsym $mod+Control+Shift+1 move container to workspace number $ws1 workspace number $ws1
+bindsym $mod+Control+Shift+2 move container to workspace number $ws2 workspace number $ws2
+bindsym $mod+Control+Shift+3 move container to workspace number $ws3 workspace number $ws3
+bindsym $mod+Control+Shift+4 move container to workspace number $ws4 workspace number $ws4
+bindsym $mod+Control+Shift+5 move container to workspace number $ws5 workspace number $ws5
+bindsym $mod+Control+Shift+6 move container to workspace number $ws6 workspace number $ws6
+bindsym $mod+Control+Shift+7 move container to workspace number $ws7 workspace number $ws7
+bindsym $mod+Control+Shift+8 move container to workspace number $ws8 workspace number $ws8
+bindsym $mod+Control+Shift+9 move container to workspace number $ws9 workspace number $ws9
+bindsym $mod+Control+Shift+0 move container to workspace number $ws10 workspace number $ws10
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -204,8 +219,8 @@ exec_always --no-startup-id  $HOME/.config/i3/setup-screen.sh
 
 # Set up PrintScreen
 
-bindsym Print exec gnome-screenshot -i
-bindsym $mod+Print exec gnome-screenshot -acf /tmp/test && cat /tmp/test | xclip -i -selection clipboard -target image/png
+bindsym Print exec --no-startup-id gnome-screenshot -i
+bindsym $mod+Print exec --no-startup-id gnome-screenshot -acf /tmp/test && cat /tmp/test | xclip -i -selection clipboard -target image/png
 
 # Set up rofi
 
@@ -232,6 +247,7 @@ bindsym Control+$mod+l move workspace to output right
 
 # Disable auto suspend
 exec --no-startup-id systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
+exec --no-startup-id xset dpms 0 0 0
 
 # Setup keyboard binding on start up
 exec --no-startup-id bash -c "setxkbmap us -option '' -option compose:ralt -option caps:escape"
