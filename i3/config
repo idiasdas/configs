@@ -226,6 +226,7 @@ bindsym $mod+Print exec --no-startup-id gnome-screenshot -acf /tmp/test && cat /
 
 bindsym $mod+o exec rofi -show run
 bindsym $mod+g exec rofi -show combi
+bindsym $mod+p exec $HOME/configs/i3/rofi-open-file.sh
 
 # Lock session
 
