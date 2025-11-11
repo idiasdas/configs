@@ -1,0 +1,17 @@
+[color "diff"]
+    commit = italic blue
+    old = bold red
+    new = bold green
+    func = bold blue
+[alias]
+    st = status
+    l = log \
+        --pretty=format:'%C(yellow)%h %C(blue)%ad%Creset %<(80,trunc)%s %Cgreen%an%C(auto)%d%Creset' \
+        --abbrev-commit \
+        --decorate \
+        --topo-order \
+        --date=format-local:'%Y-%m-%d %H:%M'
+    amend = commit --amend
+    d = diff -w
+    dc = diff -w --cached
+

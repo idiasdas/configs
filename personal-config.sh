@@ -34,7 +34,6 @@ log "Remove previous configurations"
 execute rm $HOME/.bashrc
 execute rm $HOME/.profile
 execute rm $HOME/.git_prompt
-execute rm $HOME/.bash_alias
 execute rm $HOME/.tmux.conf
 execute rm -r $HOME/.config/nvim
 execute rm -r $HOME/.config/i3
@@ -46,11 +45,17 @@ log "Create symbolic links to config"
 execute ln -s -T $PWD/bashrc/bashrc $HOME/.bashrc
 execute ln -s -T $PWD/bashrc/profile $HOME/.profile
 execute ln -s -T $PWD/bashrc/git_prompt $HOME/.git_prompt
-execute ln -s -T $PWD/bashrc/bash_alias $HOME/.bash_alias
 execute ln -s -T $PWD/tmux/tmux.conf $HOME/.tmux.conf
 execute ln -s -T $PWD/nvim $HOME/.config/nvim
 execute ln -s -T $PWD/i3 $HOME/.config/i3
 execute ln -s -T $PWD/polybar $HOME/.config/polybar
 execute ln -s -T $PWD/rofi $HOME/.config/rofi
+
+if ! grep -q "path = .*configs/git/gitconfig" $HOME/.gitconfig ; then
+    log "Include personal git config"
+    git config --global --add include.path ~/configs/git/gitconfig
+else
+    log "Personal git config already included"
+fi
 
 log "Done"
