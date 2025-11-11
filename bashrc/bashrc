@@ -83,7 +83,7 @@ alias gl='git log --oneline'
 
 set -o vi
 source /usr/share/doc/fzf/examples/key-bindings.bash
-bind '"\ef":"tmux-find-session"'
+bind -x '"\ef":"tmux-find-session"'
 
 if [[ -e ~/.bash_local ]]; then
     source ~/.bash_local
