@@ -40,7 +40,7 @@ vim.keymap.set("n", "<M-j>", function()
     vim.cmd("normal! zz")
 end, { desc = "Quickfix: Next" })
 
-vim.keymap.set("n", "<M-j>", function()
+vim.keymap.set("n", "<M-k>", function()
     vim.cmd("copen")
     local qf_list = vim.fn.getqflist()
     if #qf_list == 0 then
