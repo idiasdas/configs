@@ -105,6 +105,3 @@ vim.keymap.set("n", "<leader>p", '"+p')
 vim.keymap.set("v", "<leader>p", '"+p')
 vim.keymap.set("n", "<leader>P", '"+P')
 
--- Clangd Switch Source Header
-
-vim.keymap.set("n", "<leader>th", ":ClangdSwitchSourceHeader<CR>", { desc = "Clangd: [T]oggle [H]eader Source" })

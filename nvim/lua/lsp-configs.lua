@@ -18,6 +18,10 @@ local on_attach = function(args)
     map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction", { "n", "x" })
     map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
     map("<leader>gf", vim.lsp.buf.format, "[F]ormat file")
+    -- Clangd Switch Source Header
+
+    map("<leader>th", "<cmd>ClangdSwitchSourceHeader<CR>","Clangd: [T]oggle [H]eader Source")
+    map("<leader>tH", "<cmd>ClangdSwitchSourceHeaderVSplit<CR>","Clangd: [T]oggle [H]eader Source Vertical Split")
 
     if client:supports_method("textDocument/completion") then
         vim.lsp.completion.enable(true, client.id, args.buf, { autotrigger = true })
