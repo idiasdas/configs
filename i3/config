@@ -213,10 +213,6 @@ exec_always --no-startup-id $HOME/.config/polybar/launch_polybar.sh
 # Set up wallpaper
 exec_always --no-startup-id $HOME/.config/i3/setup-wallpaper.sh
 
-# Set up monitors
-
-exec_always --no-startup-id  $HOME/.config/i3/setup-screen.sh
-
 # Set up PrintScreen
 
 bindsym Print exec --no-startup-id gnome-screenshot -i
