@@ -14,4 +14,9 @@
     amend = commit --amend
     d = diff -w
     dc = diff -w --cached
-
+[format]
+    pretty = format:"%C(yellow)%h %C(blue)%ad%Creset %<(80,trunc)%s %Cgreen%an%C(auto)%d%Creset"
+[log]
+    date=format-local:"%Y-%m-%d %H:%M"
+    abbrevCommit = true
+    decorate = true
