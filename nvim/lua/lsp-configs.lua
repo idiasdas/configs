@@ -18,8 +18,8 @@ local on_attach = function(args)
     map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction", { "n", "x" })
     map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
     map("<leader>gf", vim.lsp.buf.format, "[F]ormat file")
-    -- Clangd Switch Source Header
 
+    -- Clangd Switch Source Header
     if client.name == "clangd" then
         map("<leader>th", "<cmd>ClangdSwitchSourceHeader<CR>", "Clangd: [T]oggle [H]eader Source")
         map("<leader>tH", "<cmd>ClangdSwitchSourceHeaderVSplit<CR>", "Clangd: [T]oggle [H]eader Source Vertical Split")
@@ -72,4 +72,4 @@ vim.lsp.config("*", {
     root_markers = { ".git" },
 })
 
-vim.lsp.enable({ "luals", "bashls" })
+vim.lsp.enable({ "luals", "bashls", "tsc" })

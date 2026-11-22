@@ -1,4 +1,3 @@
-
 return {
     {
         "nvim-treesitter/nvim-treesitter",
@@ -16,6 +15,9 @@ return {
                 "vim",
                 "vimdoc",
                 "bash",
+                "javascript",
+                "typescript",
+                "tsx",
             })
             vim.api.nvim_create_autocmd("FileType", {
                 pattern = {
@@ -26,6 +28,10 @@ return {
                     "help",
                     "bash",
                     "sh",
+                    "javascript",
+                    "javascriptreact",
+                    "typescript",
+                    "typescriptreact",
                 },
                 callback = function()
                     pcall(vim.treesitter.start)
