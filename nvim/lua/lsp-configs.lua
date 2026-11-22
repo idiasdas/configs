@@ -20,8 +20,10 @@ local on_attach = function(args)
     map("<leader>gf", vim.lsp.buf.format, "[F]ormat file")
     -- Clangd Switch Source Header
 
-    map("<leader>th", "<cmd>ClangdSwitchSourceHeader<CR>","Clangd: [T]oggle [H]eader Source")
-    map("<leader>tH", "<cmd>ClangdSwitchSourceHeaderVSplit<CR>","Clangd: [T]oggle [H]eader Source Vertical Split")
+    if client.name == "clangd" then
+        map("<leader>th", "<cmd>ClangdSwitchSourceHeader<CR>", "Clangd: [T]oggle [H]eader Source")
+        map("<leader>tH", "<cmd>ClangdSwitchSourceHeaderVSplit<CR>", "Clangd: [T]oggle [H]eader Source Vertical Split")
+    end
 
     if client:supports_method("textDocument/completion") then
         vim.lsp.completion.enable(true, client.id, args.buf, { autotrigger = true })
@@ -70,4 +72,4 @@ vim.lsp.config("*", {
     root_markers = { ".git" },
 })
 
-vim.lsp.enable({ "luals", "clangd", "bashls", "cmake", "pylsp" })
+vim.lsp.enable({ "luals", "bashls" })
