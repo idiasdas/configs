@@ -1,15 +1,35 @@
+
 return {
     {
         "nvim-treesitter/nvim-treesitter",
+        branch = "main",
+        lazy = false,
         build = ":TSUpdate",
+
         config = function()
-            local config = require("nvim-treesitter.configs")
-            config.setup({
-                ensure_installed = { "c", "cpp", "lua", "vim", "vimdoc", "bash" },
-                auto_install = false,
-                highlight = { enable = true },
-                indent = { enable = true },
-                aditional_vim_regex_highlighting = false,
+            local treesitter = require("nvim-treesitter")
+            treesitter.setup({})
+            treesitter.install({
+                "c",
+                "cpp",
+                "lua",
+                "vim",
+                "vimdoc",
+                "bash",
+            })
+            vim.api.nvim_create_autocmd("FileType", {
+                pattern = {
+                    "c",
+                    "cpp",
+                    "lua",
+                    "vim",
+                    "help",
+                    "bash",
+                    "sh",
+                },
+                callback = function()
+                    pcall(vim.treesitter.start)
+                end,
             })
             vim.api.nvim_set_hl(0, "@variable", { link = "Identifier" })
             vim.api.nvim_set_hl(0, "@lsp.type.variable", { link = "Identifier" })
