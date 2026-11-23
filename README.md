@@ -1,6 +1,6 @@
 # Configs
 
-These are my personal configs for neovim, tmux, i3, bash, ...
+These are my personal configs for neovim, tmux, bash and git (WSL setup).
 
 ## Setup
 
@@ -17,9 +17,15 @@ You can use `--dry` to check what these scripts will do.
 The `filter` option will only execute the matching scripts in `install-scripts/`. For example:
 
 ```bash
-$ ./personal-install.sh --dry nvim
-[DRY RUN]: /home/idiasdas/configs -- nvim
-[DRY RUN]: Filtering -- ./install-scripts/tmux_plugins
-[DRY RUN]: Filtering -- ./install-scripts/i3
-[DRY RUN]: [EXECUTE]: ././install-scripts/nvim.sh
+$ ./personal-install.sh --dry tmux
+[DRY RUN]: /home/igord/configs -- tmux
+[DRY RUN]: [EXECUTE]: ././install-scripts/tmux_plugins
 ```
+
+## Neovim
+
+Neovim is not installed by these scripts. Build it from source in `~/dev/neovim`;
+`bashrc` adds `~/dev/neovim/build/bin` to `PATH`.
+
+The TypeScript setup uses the project's own `node_modules/.bin/tsc`, so it needs Node.
+`bashrc` loads Node through [nvm](https://github.com/nvm-sh/nvm) from `~/.nvm`.
