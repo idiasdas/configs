@@ -18,6 +18,7 @@ return {
                 "javascript",
                 "typescript",
                 "tsx",
+                "json",
             })
             vim.api.nvim_create_autocmd("FileType", {
                 pattern = {
@@ -32,6 +33,7 @@ return {
                     "javascriptreact",
                     "typescript",
                     "typescriptreact",
+                    "json",
                 },
                 callback = function()
                     pcall(vim.treesitter.start)
