@@ -17,7 +17,7 @@ local on_attach = function(args)
     map("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
     map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction", { "n", "x" })
     map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
-    map("<leader>gf", vim.lsp.buf.format, "[F]ormat file")
+    -- <leader>gf (format) and format on save live in lua/plugins/conform.lua
 
     -- Clangd Switch Source Header
     if client.name == "clangd" then
@@ -27,30 +27,6 @@ local on_attach = function(args)
 
     if client:supports_method("textDocument/completion") then
         vim.lsp.completion.enable(true, client.id, args.buf, { autotrigger = true })
-    end
-
-    if
-        not client:supports_method("textDocument/willSaveWaitUntil")
-        and client:supports_method("textDocument/formatting")
-    then
-        vim.api.nvim_create_autocmd("BufWritePre", {
-            group = vim.api.nvim_create_augroup("my.lsp", { clear = false }),
-            buffer = args.buf,
-            callback = function()
-                vim.lsp.buf.format({ bufnr = args.buf, id = client.id, timeout_ms = 1000 })
-            end,
-        })
-    end
-    if
-        client.supports_method("textDocument/willSaveWaitUntil") and client.supports_method("textDocument/formatting")
-    then
-        vim.api.nvim_create_autocmd("BufWritePre", {
-            group = vim.api.nvim_create_augroup("my.lsp", { clear = false }),
-            buffer = args.buf,
-            callback = function()
-                vim.lsp.buf.format({ bufnr = args.buf, id = client.id, timeout_ms = 1000 })
-            end,
-        })
     end
 end
 
@@ -72,4 +48,4 @@ vim.lsp.config("*", {
     root_markers = { ".git" },
 })
 
-vim.lsp.enable({ "luals", "bashls", "tsc" })
+vim.lsp.enable({ "lua_ls", "bashls", "clangd", "tsc", "eslint" })
